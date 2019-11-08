@@ -24,7 +24,7 @@ let Greeter = {
             select += `<option>${person.name}</option>`;
         });
         select += '</select>';
-        document.write(`<section id="input">${select}</section>
+        document.write(`<section id="input" class="box">${select}</section>
         <section id="output"></section>`);
         document.getElementById('input').addEventListener('change', (e) => {
             this.getOutput(e.target)
@@ -32,7 +32,7 @@ let Greeter = {
         return;
     },
     getOutput(target) {
-        let output = this.getGreeting() + target.value + '. ' + this.ppl[target.selectedIndex].compliment;
+        let output = `<h1>${this.getGreeting() + target.value}. ${this.ppl[target.selectedIndex].compliment}</h1>‚`;
         document.getElementById('output').innerHTML = output;
     },
     getGreeting() {
